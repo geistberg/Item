@@ -87,6 +87,7 @@ class Item extends Base {
             return [ 'error' => 'nothing to delete', 'success' => null ];
         }
         $sql = "DELETE FROM $table WHERE $primary_key = $primary_value";
+        $this->clear_cache();
         return $this->query($sql);
     }
 
